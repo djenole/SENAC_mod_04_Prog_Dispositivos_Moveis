@@ -21,25 +21,34 @@ export default class JogoDadosAulaSenac extends Component {
     var imgSource;
     var cond = this.state.FacePadrao;
     console.log(cond);
-    if (cond == 1) {
-      imgSource = images.d1.uri;
+
+
+    switch(cond) {
+      case 1:
+        imgSource = images.d1.uri;
+        break;
+      
+      case 2:
+        imgSource = images.d2.uri;
+        break;
+
+      case 3:
+        imgSource = images.d3.uri;
+        break;
+
+      case 4:
+        imgSource = images.d4.uri;
+        break;
+      
+      case 5:
+        imgSource = images.d5.uri;
+        break;
+
+      case 6:
+        imgSource = images.d6.uri;
+        break;
     }
-    if (cond == 2) {
-      imgSource = images.d2.uri;
-    }
-    if (cond == 3) {
-      imgSource = images.d3.uri;
-    }
-    if (cond == 4) {
-      imgSource = images.d4.uri;
-    }
-    if (cond == 5) {
-      imgSource = images.d5.uri;
-    }
-    if (cond == 6) {
-      imgSource = images.d6.uri;
-    }
-    console.log(imgSource);
+
 
     return (
       <View style={styles.MainContainer} >
