@@ -1,23 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {Button, Card} from 'react-native-paper'
+
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+
 import CardComponent from './components/CardComponent.js'
 
 export default function App() {
   return (
-    <View>
+
+    <View style={styles.card}>
+    <ScrollView >
       
       
      
-     <CardComponent/>
-      
-      
+     <CardComponent />
      
+     <CardComponent />
+     
+     <CardComponent />
+     <CardComponent />
+     <CardComponent />
+
+    </ScrollView>
     </View>
 
   );
  
 }
+
+const styles = StyleSheet.create({
+  card: {
+    
+    marginTop:100,
+    flex: 4,
+    backgroundColor: '#fff',
+   
+   
+    justifyContent: 'center' 
+  }
+});
 
 
 
