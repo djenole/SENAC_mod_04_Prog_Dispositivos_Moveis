@@ -1,4 +1,3 @@
-
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import CardComponent from './components/CardComponent.js'
@@ -37,6 +36,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center' 
   }
 });
-
-
-
