@@ -1,13 +1,12 @@
-import React, { startTransition, useState } from 'react';
+import React, { useState } from 'react';
 import { FlatList, Image, View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
 const dummyArray = [
-  {id: 1, escudo: require("./assets/fla.png"), value: 'Flamengo'},
-  {id: 2, escudo: require("./assets/vasc.png"), value: 'Vasco'},
-  {id: 3, escudo: require("./assets/flu.png"), value: 'Fluminense'},
-  {id: 4, escudo: require("./assets/bota.png"), value: 'Botafogo'},
+  { id: 1, escudo: require("./assets/fla.png"), value: 'Flamengo' },
+  { id: 2, escudo: require("./assets/vasc.png"), value: 'Vasco' },
+  { id: 3, escudo: require("./assets/flu.png"), value: 'Fluminense' },
+  { id: 4, escudo: require("./assets/bota.png"), value: 'Botafogo' },
 ];
-
 //const imageUrl = "https://th.bing.com/th/id/OIP.JwcF3pZcjGSGkBiwWMCo4AHaE7?pid=ImgDet&rs=1";
 const App = () => {
   const [listItems, setListItems] = useState(dummyArray);
@@ -15,26 +14,21 @@ const App = () => {
   const ItemView = ({ item }) => {
     return (
       // FlatList Item
-      
       <ImageBackground
-       source={require("./assets/background.jpg")}
-       style={styles.imageFundo}>
-
+        source={require("./assets/background.jpg")}
+        style={styles.imageFundo}>
         <TouchableOpacity
           style={styles.touch}
-          onPress={() => getItem(item)}>  
+          onPress={() => getItem(item)}>
           <Image
             style={styles.imagemEscudo}
             source={item.escudo}
           />
           <Text
             style={styles.item}>
-            
             {item.value}
-            
           </Text>
         </TouchableOpacity>
-
       </ImageBackground>
     );
   };
@@ -79,7 +73,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-
     justifyContent: 'center',
     flex: 1,
     marginLeft: 10,
@@ -88,8 +81,6 @@ const styles = StyleSheet.create({
     marginTop: 70,
   },
   item: {
-    
-    
     padding: 5,
     fontSize: 28,
     marginVertical: 18,
