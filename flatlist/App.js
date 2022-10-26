@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { FlatList, View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import React, { startTransition, useState } from 'react';
+import { FlatList, Image, View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
 const dummyArray = [
-  { id: '1', value: 'Flamengo', image: require("./assets/fla.png") },
-  { id: '2', value: 'Vasco',  image: require("./assets/vasc.png") },
-  { id: '3', value: 'Fluminense',  image: require("./assets/flu.png") },
-  { id: '4', value: 'Botafogo',  image: require("./assets/bota.png") },
+  {id: 1, escudo: require("./assets/fla.png"), value: 'Flamengo'},
+  {id: 2, escudo: require("./assets/vasc.png"), value: 'Vasco'},
+  {id: 3, escudo: require("./assets/flu.png"), value: 'Fluminense'},
+  {id: 4, escudo: require("./assets/bota.png"), value: 'Botafogo'},
 ];
 
 //const imageUrl = "https://th.bing.com/th/id/OIP.JwcF3pZcjGSGkBiwWMCo4AHaE7?pid=ImgDet&rs=1";
@@ -19,12 +19,19 @@ const App = () => {
       <ImageBackground
        source={require("./assets/background.jpg")}
        style={styles.imageFundo}>
+
         <TouchableOpacity
-          onPress={() => getItem(item)}>
+          style={styles.touch}
+          onPress={() => getItem(item)}>  
+          <Image
+            style={styles.imagemEscudo}
+            source={item.escudo}
+          />
           <Text
             style={styles.item}>
-            {item.image}
+            
             {item.value}
+            
           </Text>
         </TouchableOpacity>
 
@@ -92,6 +99,18 @@ const styles = StyleSheet.create({
   },
   imageFundo: {
     margin: 4,
+  },
+  imagemEscudo: {
+    height: 50,
+    width: 50,
+    marginLeft: 10,
+  },
+  touch: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+
   }
 });
 
